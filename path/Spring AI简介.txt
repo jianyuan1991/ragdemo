@@ -1,0 +1,16 @@
+Spring AI项目旨在简化包含人工智能功能的应用程序的开发，而不会造成不必要的复杂性。
+该项目从著名的 Python 项目中汲取灵感，例如 LangChain 和 LlamaIndex，但 Spring AI 并不是这些项目的直接移植。 该项目成立的信念是，下一波生成式 AI 应用程序将不仅适用于 Python 开发人员，而且将在许多编程语言中无处不在。
+Spring AI 的核心是提供抽象，作为开发 AI 应用程序的基础。 这些抽象具有多种实现，只需最少的代码更改即可轻松交换组件。
+Spring AI 提供以下功能：
+1.支持所有主要的模型提供商，如OpenAI，Microsoft，Amazon，Google和Huggingface。
+2.支持的模型类型包括聊天和文本到图像，还有更多类型正在开发中。
+3.跨 AI 提供商的可移植 API，用于聊天和嵌入模型。支持同步和流 API 选项。还支持下拉以访问特定于模型的功能。
+4.将 AI 模型输出映射到 POJO。
+5.支持所有主要的向量数据库提供商，例如 Azure Vector Search、Chroma、Milvus、Neo4j、PostgreSQL/PGVector、PineCone、Qdrant、Redis 和 Weaviate
+6.跨 Vector Store 提供程序的可移植 API，包括一个类似 SQL 的新颖元数据过滤器 API，该 API 也是可移植的。
+7.函数调用
+8.用于 AI 模型和矢量存储的 Spring Boot 自动配置和启动器。
+9.用于数据工程的 ETL 框架
+通过此功能集，您可以实现常见用例，例如“文档问答”或“与文档聊天”。
+概念部分提供了 AI 概念及其在 Spring AI 中的表示的高级概述。
+“入门”部分介绍了如何创建第一个 AI 应用程序。 后续部分将采用以代码为中心的方法深入探讨每个组件和常见用例。

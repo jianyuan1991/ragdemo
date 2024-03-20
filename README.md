@@ -45,6 +45,14 @@ embedding模型： mofanke/dmeta-embedding-zh（中文支持比较好）
 
 向量数据库：pgvector（postgresql）
 
+
+
+**工程完整代码:**
+
+https://github.com/jianyuan1991/ragdemo
+
+https://gitee.com/jianyuan/ragdemo
+
 ## 环境准备
 
 ### Ollama和模型

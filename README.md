@@ -67,7 +67,7 @@ ollama run qwen:7b
 ollama pull  mofanke/dmeta-embedding-zh
 ```
 
-![安装dmeta-embedding-zh完成](img/安装dmeta-embedding-zh完成.png)
+![安装dmeta-embedding-zh完成](./img/安装dmeta-embedding-zh完成.png)
 
 
 
@@ -75,7 +75,7 @@ ollama pull  mofanke/dmeta-embedding-zh
 
 pgvector是postgresql的一个扩展，使得postgresql能够存储和搜索向量数据，pgvector 提供 2 种类型的索引，IVFFlat 和 HNSW，都是近似最近邻 （ANN） 索引，索引可以加快搜索相似向量的速度。以下是它们的主要区别：
 
-![IVFFlat和HNSW的区别](img/IVFFlat和HNSW区别.png)
+![IVFFlat和HNSW的区别](./img/IVFFlat和HNSW区别.png)
 
 另外pgvector 引入了三个可用于计算相似度的新运算符： <-> – 欧几里得距离、<#> – 负内积、<=> – 余弦距离
 
@@ -419,7 +419,7 @@ Spring AI 提供以下功能：
 
 使用postman调用接口:
 
-![postman测试文件上传](img/postman测试文件上传.png)
+![postman测试文件上传](./img/postman测试文件上传.png)
 
 本次demo使用向量数据库问pgvector，项目启动后，spring ai会连接pgvector自动创建vector_store表，当然也手动提前创建:
 
@@ -442,7 +442,7 @@ CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
 
 测试过后可以连接数据库查询vector_store表的数据:
 
-![pgvector数据查询](img/pgvector数据查询.png)
+![pgvector数据查询](./img/pgvector数据查询.png)
 
 
 
@@ -450,7 +450,7 @@ CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
 
 数据准备阶段已经测试完成，接下来可以测试问答，使用postman调用接口:
 
-![postman测试问答](img/postman测试问答.png)
+![postman测试问答](./img/postman测试问答.png)
 
 *本地CPU运行大模型还是太慢了，一个接口跑了1分半多。*
 

@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import org.springframework.ai.document.Document;
-import org.springframework.ai.ollama.OllamaChatClient;
+import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileUrlResource;
@@ -34,9 +34,9 @@ public class DocumentService {
 	private VectorStore vectorStore;
 
 	@Autowired
-	private OllamaChatClient ollamaChatClient;
+	private OllamaChatModel ollamaChatModel;
 
-	private static final String PATH = "D:\\demo\\ai\\path\\";
+	private static final String PATH = "/app/ragdemo/path";
 
 	/**
 	 * 使用spring ai解析txt文档
@@ -146,7 +146,7 @@ public class DocumentService {
 				.collect(Collectors.joining("\n"));
 
 		//封装prompt并调用大模型
-		String chatResponse = ollamaChatClient.call(getChatPrompt2String(message, content));
+		String chatResponse = ollamaChatModel.call(getChatPrompt2String(message, content));
 		return chatResponse;
 	}
 

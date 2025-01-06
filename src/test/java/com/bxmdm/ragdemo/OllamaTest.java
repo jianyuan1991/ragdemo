@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.embedding.Embedding;
-import org.springframework.ai.embedding.EmbeddingClient;
+import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.embedding.EmbeddingRequest;
 import org.springframework.ai.embedding.EmbeddingResponse;
-import org.springframework.ai.ollama.OllamaChatClient;
+import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.ai.ollama.api.OllamaOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,40 +22,40 @@ import org.springframework.boot.test.context.SpringBootTest;
 class OllamaTest {
 
 	@Autowired
-	private OllamaChatClient ollamaChatClient;
+	private OllamaChatModel ollamaChatModel;
 
 	@Autowired
-	private EmbeddingClient embeddingClient;
+	private EmbeddingModel embeddingModel;
 
 	@Test
 	void embeddingDimensionsTest() {
-		System.out.println(embeddingClient.dimensions());
+		System.out.println(embeddingModel.dimensions());
 	}
 
 	@Test
-	void ollamaChatClientTest() {
+	void ollamaChatModelTest() {
 		String message = """
 					给我讲一个java程序员的笑话吧
 				""";
-		System.out.println(ollamaChatClient.call(message));
+		System.out.println(ollamaChatModel.call(message));
 	}
 
 	@Test
-	void embeddingClientTest1() {
-		EmbeddingResponse embeddingResponse = embeddingClient.call(
+	void embeddingModelTest1() {
+		EmbeddingResponse embeddingResponse = embeddingModel.call(
 				new EmbeddingRequest(List.of("Hello World", "World is big and salvation is near"),
 						OllamaOptions.create()
 								.withModel("qwen:7b")));
 		for (Embedding result : embeddingResponse.getResults()) {
-			System.out.println(Arrays.toString(result.getOutput().toArray()));
+			System.out.println(Arrays.toString(result.getOutput()));
 		}
 	}
 
 	@Test
-	void embeddingClientTest2() {
-		EmbeddingResponse embeddingResponse = embeddingClient.embedForResponse(List.of("Hello World", "World is big and salvation is near"));
+	void embeddingModelTest2() {
+		EmbeddingResponse embeddingResponse = embeddingModel.embedForResponse(List.of("Hello World", "World is big and salvation is near"));
 		for (Embedding result : embeddingResponse.getResults()) {
-			System.out.println(Arrays.toString(result.getOutput().toArray()));
+			System.out.println(Arrays.toString(result.getOutput()));
 		}
 	}
 }

@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://192.168.3.220:5432/postgres
+    url: jdbc:postgresql://pgvector:5432/postgres
     username: postgres
     password: postgres
   ai:
@@ -8,9 +8,9 @@ spring:
       pgvector:
         dimensions: 768
     ollama:
-      base-url: http://localhost:11434
+      base-url: http://jeecg-boot-ollama-1:11434
       chat:
-        model: qwen:7b
+        model: qwen2
       embedding:
         model: mofanke/dmeta-embedding-zh
 # springdoc-openapi项目配置`
